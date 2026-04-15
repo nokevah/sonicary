@@ -1,17 +1,22 @@
->
+<table>
   <tr>
-    <td><img src="public/img/galaxy.png" width="50" alt="souldsolid"></td>
-    <td><h1>Soulsolid</h1></td>
+    <td><img src="public/img/galaxy.png" width="50" alt="Sonicary"></td>
+    <td><h1>Sonicary</h1></td>
   </tr>
 </table>
 
-[![Join Discord](https://img.shields.io/badge/Discord-Join%20Server-5865F2?logo=discord&logoColor=white)](https://discord.gg/mHRjGAjEJz)
+Sonicary is a self-hosted music library manager focused on importing, organizing, and maintaining music collections.
 
-A work in progress, feature rich music organization app built for the music hoarder. Heavily under development, focused on ease of usage and start up. Feel free to check the [docs](https://soulsolid.contre.io) or [demo](https://soulsolid-demo.contre.io)
+It began as a fork of [Soulsolid](https://github.com/contre95/soulsolid), building on the excellent foundation created by its original author, [Contre](https://contre.io/). Sonicary is taking the project in a different direction, with a stronger focus on safer library setup, organization, and long-term collection management for self-hosted use.
 
-See the [deepwiki](https://deepwiki.com/contre95/soulsolid)
+## Attribution
+
+Sonicary is based on [Soulsolid](https://github.com/contre95/soulsolid). Full credit and appreciation go to [Contre](https://contre.io/) for creating the original project and laying the groundwork this fork builds on.
+
+This fork does not attempt to erase or obscure that origin. It exists to explore a different workflow and product direction.
 
 ## Screenshots
+
 <table>
   <tr>
     <td>
@@ -24,27 +29,26 @@ See the [deepwiki](https://deepwiki.com/contre95/soulsolid)
 </table>
 
 ## Features
+
 - **Music Library Management**: Organize and browse albums, artists, and tracks
-- **Downloading**: Download tracks and albums. 
-- **Importing**: Import music from directories with automatic fingerprinting
+- **Downloading**: Download tracks and albums
+- **Importing**: Import new music from intake directories with automatic fingerprinting
 - **Metadata Tagging**: Auto-tag using MusicBrainz and Discogs APIs
 - **Telegram Integration**: Control via Telegram bot
-- **Web UI**: Mobile-friendly interface for all operations 
-- **Job Management**: Background processing for downloads, imports, and synced lyrics and more. 
+- **Web UI**: Mobile-friendly interface for library and import workflows
+- **Job Management**: Background processing for downloads, imports, lyrics, and related tasks
 
-Documentation: https://soulsolid.contre.io
-Demo: https://soulsolid-demo.contre.io
-
+> Documentation and demo links are being reworked for Sonicary and are not yet published.
 
 ## Quick Start
 
 ### 🦭 Container Usage
 
-The application can run without copying `config.yaml` into the container. If no config file exists, it will automatically create one with sensible defaults. 
+The application can run without copying `config.yaml` into the container. If no config file exists, it will automatically create one with sensible defaults.
 
 #### Environment Variable Support
 
-Soulsolid supports environment variables in configuration files using the `!env_var` tag:
+Sonicary supports environment variables in configuration files using the `!env_var` tag:
 
 ```yaml
 telegram:
@@ -59,19 +63,14 @@ The application will fail to start if a referenced environment variable is not s
 
 ```bash
 # Build the image
-podman build -t soulsolid .
+podman build -t sonicary .
 
 # Run with environment variables
-podman run -d \
-  --name soulsolid \
-  -p 3535:3535 \
-  -v /host/music:/app/library \ <-- Music will be imported (copied/moved) TO this folder 
-  -v /host/downloads:/app/downloads \ <-- Music will be import FROM this folder
-  -v /host/logs:/app/logs \ # optional
-  -v /host/library.db:/data/library.db \
-  -v /host/config.yaml:/config/config.yaml \
-  soulsolid
+podman run -d   --name sonicary   -p 3535:3535   -v /host/music:/app/library   -v /host/downloads:/app/downloads   -v /host/logs:/app/logs   -v /host/library.db:/data/library.db   -v /host/config.yaml:/config/config.yaml   sonicary
 ```
+
+- `/app/library` is the managed music library location
+- `/app/downloads` is the intake/download path used for new imports
 
 The web interface will be available at `http://localhost:3535`.
 
@@ -87,14 +86,13 @@ npm run dev
 go run ./src/main.go
 ```
 
-### Option 2: Using Nix (recommended if you have Nix)
+### Option 2: Using Nix
 
-If you have Nix installed, use the provided dev.nix shell:
+If you have Nix installed, use the provided `dev.nix` shell:
 
 ```bash
-# Set up all dependencies (Node.js, Go, etc.) and run the necessary commands
 nix-shell dev.nix
-# Then, simply run:
 go run ./src/main.go
 ```
+
 The web interface will be available at `http://localhost:3535`.
