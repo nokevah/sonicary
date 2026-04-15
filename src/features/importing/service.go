@@ -60,9 +60,26 @@ func NewService(lib music.Library, tagReader TagReader, fingerprintReader Finger
 	return s
 }
 
+func isPathWithinBase(path string, base string) bool {
+	path = filepath.Clean(path)
+	base = filepath.Clean(base)
+
+	if path == base {
+		return true
+	}
+
+	return strings.HasPrefix(path, base+string(filepath.Separator))
+}
+
 // ImportDirectory starts a job to import all files from a directory recursively.
 func (s *Service) ImportDirectory(ctx context.Context, pathToImport string) (string, error) {
 	slog.Debug("ImportDirectory service called", "path", pathToImport)
+
+	libraryPath := s.config.Get().LibraryPath
+	if isPathWithinBase(pathToImport, libraryPath) {
+		return "", fmt.Errorf("import from the managed library path is not allowed; use Library Setup/Organize instead")
+	}
+
 	jobID, err := s.jobService.StartJob("directory_import", "Directory Import", map[string]any{
 		"path": pathToImport,
 	})
