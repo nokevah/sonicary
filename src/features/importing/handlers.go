@@ -81,7 +81,7 @@ func (h *Handler) ImportDirectory(c *fiber.Ctx) error {
 	if err != nil {
 		slog.Error("Error importing directory", "error", err)
 		return c.Render("toast/toastErr", fiber.Map{
-			"Msg": "Failed to start sync job",
+    			"Msg": fmt.Sprintf("Import failed: %s", err.Error()),
 		})
 	}
 	slog.Info("ImportDirectory: directory import started", "jobID", jobID)
