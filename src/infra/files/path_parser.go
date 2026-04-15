@@ -128,6 +128,10 @@ func (p *TemplatePathParser) renderValues(template string, track *music.Track) (
 			val = strconv.Itoa(track.Metadata.Year)
 		case "original_year":
 			val = strconv.Itoa(track.Metadata.OriginalYear)
+		case "disc", "discnumber":
+			if track.Metadata.DiscNumber > 0 {
+				val = fmt.Sprintf("%02d", track.Metadata.DiscNumber)
+			}
 		case "track":
 			val = fmt.Sprintf("%02d", track.Metadata.TrackNumber)
 		case "title":
