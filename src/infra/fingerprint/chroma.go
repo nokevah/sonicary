@@ -7,8 +7,8 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/contre95/soulsolid/src/features/config"
-	"github.com/contre95/soulsolid/src/features/importing"
+	"github.com/nokevah/sonicary/src/features/config"
+	"github.com/nokevah/sonicary/src/features/importing"
 )
 
 // Service implements FingerprintReader for audio fingerprinting

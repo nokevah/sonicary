@@ -6,18 +6,18 @@ import (
 	"os"
 	"strings"
 
-	"github.com/contre95/soulsolid/src/features/config"
-	"github.com/contre95/soulsolid/src/features/downloading"
-	"github.com/contre95/soulsolid/src/features/importing"
-	"github.com/contre95/soulsolid/src/features/jobs"
-	"github.com/contre95/soulsolid/src/features/library"
-	"github.com/contre95/soulsolid/src/features/lyrics"
-	"github.com/contre95/soulsolid/src/features/metadata"
-	"github.com/contre95/soulsolid/src/features/metrics"
-	"github.com/contre95/soulsolid/src/features/playlists"
-	"github.com/contre95/soulsolid/src/features/reorganize"
-	"github.com/contre95/soulsolid/src/features/ui"
-	"github.com/contre95/soulsolid/src/music"
+	"github.com/nokevah/sonicary/src/features/config"
+	"github.com/nokevah/sonicary/src/features/downloading"
+	"github.com/nokevah/sonicary/src/features/importing"
+	"github.com/nokevah/sonicary/src/features/jobs"
+	"github.com/nokevah/sonicary/src/features/library"
+	"github.com/nokevah/sonicary/src/features/lyrics"
+	"github.com/nokevah/sonicary/src/features/metadata"
+	"github.com/nokevah/sonicary/src/features/metrics"
+	"github.com/nokevah/sonicary/src/features/playlists"
+	"github.com/nokevah/sonicary/src/features/reorganize"
+	"github.com/nokevah/sonicary/src/features/ui"
+	"github.com/nokevah/sonicary/src/music"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html/v2"
 )
@@ -85,7 +85,7 @@ func NewServer(cfg *config.Manager, importingService *importing.Service, library
 			slog.Error("Internal Server Error", "error", err)
 			return c.Status(fiber.StatusInternalServerError).SendString(err.Error())
 		},
-		AppName:               "Soulsolid",
+		AppName:               "Sonicary",
 		DisableStartupMessage: true,
 		EnablePrintRoutes:     cfg.Get().Server.PrintRoutes,
 		BodyLimit:             1000 * 1024 * 1024, // 100MB limit for file uploads

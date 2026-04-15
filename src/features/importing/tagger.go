@@ -3,7 +3,7 @@ package importing
 import (
 	"context"
 
-	"github.com/contre95/soulsolid/src/music"
+	"github.com/nokevah/sonicary/src/music"
 )
 
 // TagReader is the interface for reading metadata from a music file.

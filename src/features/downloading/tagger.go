@@ -3,7 +3,7 @@ package downloading
 import (
 	"context"
 
-	"github.com/contre95/soulsolid/src/music"
+	"github.com/nokevah/sonicary/src/music"
 )
 
 // TagWriter defines the interface for writing metadata tags to music files.

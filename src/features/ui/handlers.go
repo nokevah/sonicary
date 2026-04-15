@@ -3,7 +3,7 @@ package ui
 import (
 	"log/slog"
 
-	"github.com/contre95/soulsolid/src/features/config"
+	"github.com/nokevah/sonicary/src/features/config"
 	"github.com/gofiber/fiber/v2"
 )
 

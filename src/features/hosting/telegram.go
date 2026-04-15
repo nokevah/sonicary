@@ -6,10 +6,10 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/contre95/soulsolid/src/features/config"
-	"github.com/contre95/soulsolid/src/features/importing"
-	"github.com/contre95/soulsolid/src/features/jobs"
-	"github.com/contre95/soulsolid/src/features/library"
+	"github.com/nokevah/sonicary/src/features/config"
+	"github.com/nokevah/sonicary/src/features/importing"
+	"github.com/nokevah/sonicary/src/features/jobs"
+	"github.com/nokevah/sonicary/src/features/library"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )
 
@@ -260,7 +260,7 @@ func (t *TelegramBot) handleCallbackQuery(update tgbotapi.Update) {
 
 // handleHelp shows main menu with inline keyboard
 func (t *TelegramBot) handleHelp(chatID int64) {
-	text := `*🤖 Soulsolid Main Menu*
+	text := `*🤖 Sonicary Main Menu*
 
 Choose an action below or use commands directly:`
 

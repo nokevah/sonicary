@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log/slog"
 
-	"github.com/contre95/soulsolid/src/music"
+	"github.com/nokevah/sonicary/src/music"
 )
 
 // MetricsCalculationTask implements jobs.Task for calculating library metrics.

@@ -8,8 +8,8 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/contre95/soulsolid/src/features/config"
-	"github.com/contre95/soulsolid/src/music"
+	"github.com/nokevah/sonicary/src/features/config"
+	"github.com/nokevah/sonicary/src/music"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )
 

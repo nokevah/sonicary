@@ -13,7 +13,7 @@
         "backgroundRadius": 0,
         "imageScale": 0.7
       },
-      "appTitle": "Soulsolid"
+      "appTitle": "Sonicary"
     },
     "webAppManifest": {
       "transformation": {
@@ -23,8 +23,8 @@
         "imageScale": 0.6
       },
       "backgroundColor": "#5893CA",
-      "name": "Soulsolid",
-      "shortName": "Soulsolid",
+      "name": "Sonicary",
+      "shortName": "Sonicary",
       "themeColor": "#5893CA"
     }
   },

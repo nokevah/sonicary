@@ -3,7 +3,7 @@ package lyrics
 import (
 	"context"
 
-	"github.com/contre95/soulsolid/src/music"
+	"github.com/nokevah/sonicary/src/music"
 )
 
 // LyricsProvider defines the interface for fetching lyrics from external services

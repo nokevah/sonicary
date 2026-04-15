@@ -10,7 +10,7 @@ import (
 	"strings"
 
 	"github.com/bogem/id3v2/v2"
-	"github.com/contre95/soulsolid/src/music"
+	"github.com/nokevah/sonicary/src/music"
 	"github.com/dhowden/tag"
 )
 

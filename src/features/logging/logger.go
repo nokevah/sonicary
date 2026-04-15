@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/charmbracelet/log"
-	"github.com/contre95/soulsolid/src/features/config"
+	"github.com/nokevah/sonicary/src/features/config"
 )
 
 func SetupLogger(cfg *config.Manager) *slog.Logger {
@@ -38,7 +38,7 @@ func SetupLogger(cfg *config.Manager) *slog.Logger {
 		ReportCaller:    true,
 		ReportTimestamp: true,
 		TimeFormat:      time.Kitchen,
-		Prefix:          "Soulsolid",
+		Prefix:          "Sonicary",
 		Formatter:       formatter,
 		Level:           level,
 	})

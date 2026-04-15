@@ -3,7 +3,7 @@ package jobs
 import (
 	"fmt"
 
-	"github.com/contre95/soulsolid/src/music"
+	"github.com/nokevah/sonicary/src/music"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )
 

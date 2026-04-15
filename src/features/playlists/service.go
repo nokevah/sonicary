@@ -9,8 +9,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/contre95/soulsolid/src/features/config"
-	"github.com/contre95/soulsolid/src/music"
+	"github.com/nokevah/sonicary/src/features/config"
+	"github.com/nokevah/sonicary/src/music"
 )
 
 // Service is the domain service for the playlists feature.

@@ -6,30 +6,30 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/contre95/soulsolid/src/features/config"
-	"github.com/contre95/soulsolid/src/features/downloading"
-	"github.com/contre95/soulsolid/src/features/hosting"
-	"github.com/contre95/soulsolid/src/features/importing"
-	"github.com/contre95/soulsolid/src/features/jobs"
-	"github.com/contre95/soulsolid/src/features/library"
-	"github.com/contre95/soulsolid/src/features/logging"
-	"github.com/contre95/soulsolid/src/features/lyrics"
-	"github.com/contre95/soulsolid/src/features/metadata"
-	"github.com/contre95/soulsolid/src/features/metrics"
-	"github.com/contre95/soulsolid/src/features/playlists"
-	"github.com/contre95/soulsolid/src/features/reorganize"
-	"github.com/contre95/soulsolid/src/infra/database"
-	"github.com/contre95/soulsolid/src/infra/files"
-	"github.com/contre95/soulsolid/src/infra/fingerprint"
-	"github.com/contre95/soulsolid/src/infra/providers"
-	"github.com/contre95/soulsolid/src/infra/queue"
-	"github.com/contre95/soulsolid/src/infra/tag"
-	"github.com/contre95/soulsolid/src/infra/watcher"
+	"github.com/nokevah/sonicary/src/features/config"
+	"github.com/nokevah/sonicary/src/features/downloading"
+	"github.com/nokevah/sonicary/src/features/hosting"
+	"github.com/nokevah/sonicary/src/features/importing"
+	"github.com/nokevah/sonicary/src/features/jobs"
+	"github.com/nokevah/sonicary/src/features/library"
+	"github.com/nokevah/sonicary/src/features/logging"
+	"github.com/nokevah/sonicary/src/features/lyrics"
+	"github.com/nokevah/sonicary/src/features/metadata"
+	"github.com/nokevah/sonicary/src/features/metrics"
+	"github.com/nokevah/sonicary/src/features/playlists"
+	"github.com/nokevah/sonicary/src/features/reorganize"
+	"github.com/nokevah/sonicary/src/infra/database"
+	"github.com/nokevah/sonicary/src/infra/files"
+	"github.com/nokevah/sonicary/src/infra/fingerprint"
+	"github.com/nokevah/sonicary/src/infra/providers"
+	"github.com/nokevah/sonicary/src/infra/queue"
+	"github.com/nokevah/sonicary/src/infra/tag"
+	"github.com/nokevah/sonicary/src/infra/watcher"
 )
 
 func main() {
 	configPath := "/config/config.yaml"
-	if envPath := os.Getenv("SOULSOLID_CONFIG_PATH"); envPath != "" {
+	if envPath := os.Getenv("SONICARY_CONFIG_PATH"); envPath != "" {
 		configPath = envPath
 	}
 	cfgManager, err := config.NewManager(configPath)

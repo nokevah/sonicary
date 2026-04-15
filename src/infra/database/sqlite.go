@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/contre95/soulsolid/src/features/metrics"
-	"github.com/contre95/soulsolid/src/music"
+	"github.com/nokevah/sonicary/src/features/metrics"
+	"github.com/nokevah/sonicary/src/music"
 	"github.com/google/uuid"
 	_ "github.com/mattn/go-sqlite3"
 )

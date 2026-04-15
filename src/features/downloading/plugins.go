@@ -15,7 +15,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/contre95/soulsolid/src/features/config"
+	"github.com/nokevah/sonicary/src/features/config"
 )
 
 // PluginNewDownloaderFunc is the function signature that plugins must export
@@ -97,7 +97,7 @@ func buildFromGit(url string) (string, error) {
 	}
 
 	// Add replace directive for soulsolid module
-	cmd = exec.Command("go", "mod", "edit", "-replace=github.com/contre95/soulsolid="+moduleRoot)
+	cmd = exec.Command("go", "mod", "edit", "-replace=github.com/nokevah/sonicary="+moduleRoot)
 	cmd.Dir = pluginDir
 	if output, err := cmd.CombinedOutput(); err != nil {
 		buildErr = fmt.Errorf("failed to add replace directive: %w: %s", err, output)

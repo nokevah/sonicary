@@ -4,7 +4,7 @@ import (
 	"context"
 	"log/slog"
 
-	"github.com/contre95/soulsolid/src/features/config"
+	"github.com/nokevah/sonicary/src/features/config"
 )
 
 // Service provides metrics functionality for the music library.

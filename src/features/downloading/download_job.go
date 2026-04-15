@@ -9,7 +9,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/contre95/soulsolid/src/music"
+	"github.com/nokevah/sonicary/src/music"
 )
 
 // Sanitize creates a filesystem-safe filename

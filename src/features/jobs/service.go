@@ -15,8 +15,8 @@ import (
 	"text/template"
 	"time"
 
-	"github.com/contre95/soulsolid/src/features/config"
-	"github.com/contre95/soulsolid/src/music"
+	"github.com/nokevah/sonicary/src/features/config"
+	"github.com/nokevah/sonicary/src/music"
 	"github.com/google/uuid"
 )
 

@@ -8,8 +8,8 @@ import (
 	"net/url"
 	"os/exec"
 
-	"github.com/contre95/soulsolid/src/features/config"
-	"github.com/contre95/soulsolid/src/features/metadata"
+	"github.com/nokevah/sonicary/src/features/config"
+	"github.com/nokevah/sonicary/src/features/metadata"
 )
 
 // AcoustIDResponse represents response from AcoustID API

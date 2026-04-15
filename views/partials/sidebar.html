@@ -5,9 +5,9 @@
   aria-label="Sidebar" aria-hidden="true">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <a href="/" class="flex items-center space-x-2 rtl:space-x-reverse">
-      <img id="logo-ship" src="/img/galaxy.png" class="h-14 animate__animated animate__rotateIn" alt="Soulsolid" />
+      <img id="logo-ship" src="/img/galaxy.png" class="h-14 animate__animated animate__rotateIn" alt="Sonicary" />
       <span class="self-center whitespace-nowrap text-gray-800 dark:text-blue-300 dark:drop-shadow-[0_0_10px_rgba(59,130,246,0.8)] hover:text-blue-300 hover:drop-shadow-[0_0_15px_rgba(96,165,250,0.9)] transition-all duration-300">
-        <span class="text-3xl font-semibold mt-2">Soulsolid</span><br>
+        <span class="text-3xl font-semibold mt-2">Sonicary</span><br>
         <span id="song-count-sidebar" class="text-xs font-semibold text-gray-500 dark:text-gray-400" hx-get="/library/tracks/count" hx-push-url="false" hx-trigger="load, every 30s" hx-swap="innerHTML"></span>
         <span id="storage-size-sidebar" class="text-xs font-semibold text-gray-500 dark:text-gray-400" hx-get="/library/storage/size" hx-push-url="false" hx-trigger="load, every 60s" hx-swap="innerHTML"></span>
       </span>
@@ -249,20 +249,7 @@
       {{end}}
     </ul>
   </div>
-  <div class="absolute bottom-0 left-0 w-full p-4 pb-6"
-    _="on mouseenter remove .opacity-0 .invisible from #breaking-changes then add .opacity-100 .visible on mouseleave add .opacity-0 .invisible to #breaking-changes then remove .opacity-100 .visible">
-    <div id="breaking-changes"
-      class="mb-2 text-center opacity-0 invisible transition-all duration-300 animate__animated"
-      _="on load wait 500ms then remove .opacity-0 .invisible then add .opacity-100 .visible .animate__bounce then wait 4s then add .opacity-0 .invisible then remove .opacity-100 .visible">
-      <a href="https://github.com/contre95/soulsolid/pull/116" target="_blank"
-        class="text-amber-500 hover:text-amber-400 text-xs font-semibold items-center space-x-1">
-        <span>⚠️</span>
-        <span class="text-red-400">Migrating from </span><span
-          class="flex items-center justify-center text-white glowy-blue space-x-2 text-xs pt-1">
-          <= v0.19.2</span>
-      </a>
-    </div>
-    <a href="https://github.com/contre95/soulsolid" target="_blank"
+    <a href="https://github.com/nokevah/sonicary" target="_blank"
       class="flex items-center justify-center text-white glowy-blue space-x-2">
       <i class="fab fa-github fa-lg"></i>
       <span class="text-sm pt-1">{{ .Version }}</span>

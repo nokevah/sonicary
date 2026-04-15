@@ -10,7 +10,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/contre95/soulsolid/src/features/importing"
+	"github.com/nokevah/sonicary/src/features/importing"
 	"github.com/fsnotify/fsnotify"
 )
 

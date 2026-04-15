@@ -9,8 +9,8 @@ import (
 	"os/exec"
 	"path/filepath"
 
-	"github.com/contre95/soulsolid/src/features/config"
-	library "github.com/contre95/soulsolid/src/music"
+	"github.com/nokevah/sonicary/src/features/config"
+	library "github.com/nokevah/sonicary/src/music"
 	"github.com/google/uuid"
 )
 

@@ -9,8 +9,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/contre95/soulsolid/src/features/metadata"
-	"github.com/contre95/soulsolid/src/music"
+	"github.com/nokevah/sonicary/src/features/metadata"
+	"github.com/nokevah/sonicary/src/music"
 )
 
 // MusicBrainz API response structures

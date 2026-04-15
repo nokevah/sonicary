@@ -7,8 +7,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/contre95/soulsolid/src/features/importing"
-	"github.com/contre95/soulsolid/src/music"
+	"github.com/nokevah/sonicary/src/features/importing"
+	"github.com/nokevah/sonicary/src/music"
 )
 
 // FileOrganizer is the infrastructure implementation of the music.FileManager interface.

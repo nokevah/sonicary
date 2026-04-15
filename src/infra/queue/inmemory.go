@@ -3,7 +3,7 @@ package queue
 import (
 	"sync"
 
-	"github.com/contre95/soulsolid/src/music"
+	"github.com/nokevah/sonicary/src/music"
 )
 
 // InMemoryQueue is an in-memory implementation of the Queue interface

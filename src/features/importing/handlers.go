@@ -8,7 +8,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/contre95/soulsolid/src/music"
+	"github.com/nokevah/sonicary/src/music"
 	"github.com/gofiber/fiber/v2"
 )
 

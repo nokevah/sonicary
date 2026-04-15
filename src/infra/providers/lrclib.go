@@ -8,7 +8,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/contre95/soulsolid/src/music"
+	"github.com/nokevah/sonicary/src/music"
 )
 
 // LRCLib API response structures

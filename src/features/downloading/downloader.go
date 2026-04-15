@@ -3,7 +3,7 @@ package downloading
 import (
 	"fmt"
 
-	"github.com/contre95/soulsolid/src/music"
+	"github.com/nokevah/sonicary/src/music"
 )
 
 // LinkResult represents the result of a link search, which can be tracks, albums, or an artist

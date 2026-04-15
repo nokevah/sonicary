@@ -3,7 +3,7 @@ package metadata
 import (
 	"context"
 
-	"github.com/contre95/soulsolid/src/music"
+	"github.com/nokevah/sonicary/src/music"
 )
 
 // SearchParams contains parameters for searching tracks in metadata providers

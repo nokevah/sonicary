@@ -1,39 +1,39 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: soulsolid-demo
+  name: sonicary-demo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: soulsolid-demo
+      app: sonicary-demo
   template:
     metadata:
       labels:
-        app: soulsolid-demo
+        app: sonicary-demo
     spec:
       containers:
-      - name: soulsolid
-        image: contre95/soulsolid:feat-fix-config_refactor
+      - name: sonicary
+        image: nokevah/sonicary:latest
         ports:
         - containerPort: 3535
           protocol: TCP
         env:
-        - name: SOULSOLID_CONFIG_PATH
+        - name: SONICARY_CONFIG_PATH
           value: /config/config.yaml
         volumeMounts:
         - mountPath: /data
           name: data
         - mountPath: /config
           name: config
-        - mountPath: /music
+        - mountPath: /app/library
           name: music
-        - mountPath: /downloads
+        - mountPath: /app/downloads
           name: downloads
       volumes:
       - name: config
         configMap:
-          name: soulsolid-demo-config
+          name: sonicary-demo-config
       - name: data
         hostPath:
           path: <path_to_data_folder>
@@ -44,5 +44,5 @@ spec:
           type: DirectoryOrCreate
       - name: downloads
         hostPath:
-          path: </path/to/downlaod_folder>
+          path: <path_to_download_folder>
           type: DirectoryOrCreate

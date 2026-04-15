@@ -1,4 +1,4 @@
-module github.com/contre95/soulsolid
+module github.com/nokevah/sonicary
 
 go 1.25.0
 

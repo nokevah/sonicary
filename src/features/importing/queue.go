@@ -1,6 +1,6 @@
 package importing
 
-import "github.com/contre95/soulsolid/src/music"
+import "github.com/nokevah/sonicary/src/music"
 
 // QueueItemType represents the type of item in the queue
 
