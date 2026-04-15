@@ -30,6 +30,7 @@ type Import struct {
 	Move                 bool   `yaml:"move"` // If not copies
 	AlwaysQueue          bool   `yaml:"always_queue"`
 	Duplicates           string `yaml:"duplicates"` // "replace", "skip", "queue"
+	AllowCrossReleaseDuplicates  bool   `yaml:"allow_cross_release_duplicates"`
 	PathOptions          Paths  `yaml:"paths"`
 	AutoStartWatcher     bool   `yaml:"auto_start_watcher"`
 	AllowMissingMetadata bool   `yaml:"allow_missing_metadata"`

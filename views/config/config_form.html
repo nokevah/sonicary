@@ -205,30 +205,41 @@
             Import
            </h2>
           <div class="space-y-3">
-            <div class="flex flex-col md:flex-row md:items-center p-3 bg-gray-50/50 dark:bg-gray-700/30 rounded-lg">
-              <input type="checkbox" id="import.move" name="import.move" value="true" {{if .Config.Import.Move}}checked{{end}}
-                     class="w-5 h-5 text-blue-600 bg-white/50 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              <label for="import.move" class="ml-6 text-sm font-medium text-gray-700 dark:text-gray-300">Move files instead of copying</label>
-            </div>
-            <div class="flex flex-col md:flex-row md:items-center p-3 bg-gray-50/50 dark:bg-gray-700/30 rounded-lg">
-                <input type="checkbox" id="import.always_queue" name="import.always_queue" value="true" {{if .Config.Import.AlwaysQueue}}checked{{end}}
-                       class="w-5 h-5 text-blue-600 bg-white/50 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                <label for="import.always_queue" class="ml-6 text-sm font-medium text-gray-700 dark:text-gray-300">Always queue tracks for review.</label>
-              </div>
-              <div class="flex flex-col md:flex-row md:items-center p-3 bg-gray-50/50 dark:bg-gray-700/30 rounded-lg">
-                <input type="checkbox" id="import.allow_missing_metadata" name="import.allow_missing_metadata" value="true" {{if .Config.Import.AllowMissingMetadata}}checked{{end}}
-                       class="w-5 h-5 text-blue-600 bg-white/50 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                <label for="import.allow_missing_metadata" class="ml-6 text-sm font-medium text-gray-700 dark:text-gray-300">Allow tracks without artist or album metadata.</label>
-              </div>
-             <div class="p-3 bg-gray-50/50 dark:bg-gray-700/30 rounded-lg">
-               <label for="import.duplicates" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Duplicate Handling</label>
-                 <select id="import.duplicates" name="import.duplicates"
-                         class="bg-white/50 dark:bg-gray-700 border border-gray-300/50 dark:border-gray-600/50 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 block w-full px-3 py-1.5 dark:placeholder-gray-400 backdrop-blur-sm">
-                   <option value="replace" {{if eq .Config.Import.Duplicates "replace"}}selected{{end}}>DUP. REPLACE - Overwrite existing files</option>
-                   <option value="skip" {{if eq .Config.Import.Duplicates "skip"}}selected{{end}}>DUP. SKIP - Keep both files</option>
-                   <option value="queue" {{if eq .Config.Import.Duplicates "queue"}}selected{{end}}>DUP. QUEUE - Add to review queue</option>
-                 </select>
-             </div>
+           <div class="flex flex-col md:flex-row md:items-center p-3 bg-gray-50/50 dark:bg-gray-700/30 rounded-lg">
+             <input type="checkbox" id="import.move" name="import.move" value="true" {{if .Config.Import.Move}}checked{{end}}
+                    class="w-5 h-5 text-blue-600 bg-white/50 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+             <label for="import.move" class="ml-6 text-sm font-medium text-gray-700 dark:text-gray-300">Move files instead of copying</label>
+           </div>
+	   <div class="flex flex-col md:flex-row md:items-center p-3 bg-gray-50/50 dark:bg-gray-700/30 rounded-lg">
+             <input type="checkbox" id="import.always_queue" name="import.always_queue" value="true" {{if .Config.Import.AlwaysQueue}}checked{{end}}
+                    class="w-5 h-5 text-blue-600 bg-white/50 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+             <label for="import.always_queue" class="ml-6 text-sm font-medium text-gray-700 dark:text-gray-300">Always queue tracks for review.</label>
+           </div>
+           <div class="flex flex-col md:flex-row md:items-center p-3 bg-gray-50/50 dark:bg-gray-700/30 rounded-lg">
+             <input type="checkbox" id="import.allow_missing_metadata" name="import.allow_missing_metadata" value="true" {{if .Config.Import.AllowMissingMetadata}}checked{{end}}
+                    class="w-5 h-5 text-blue-600 bg-white/50 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+             <label for="import.allow_missing_metadata" class="ml-6 text-sm font-medium text-gray-700 dark:text-gray-300">Allow tracks without artist or album metadata.</label>
+           </div>
+	   <div class="flex flex-col md:flex-row md:items-center p-3 bg-gray-50/50 dark:bg-gray-700/30 rounded-lg">
+	     <input type="checkbox"
+	            id="import.allow_cross_release_duplicates"
+	            name="import.allow_cross_release_duplicates"
+	            value="true"
+	            {{if .Config.Import.AllowCrossReleaseDuplicates}}checked{{end}}
+	            class="w-5 h-5 text-blue-600 bg-white/50 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+	     <label for="import.allow_cross_release_duplicates" class="ml-6 text-sm font-medium text-gray-700 dark:text-gray-300">
+	       Allow identical audio on different releases.
+	     </label>
+	   </div>
+           <div class="p-3 bg-gray-50/50 dark:bg-gray-700/30 rounded-lg">
+             <label for="import.duplicates" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Duplicate Handling</label>
+               <select id="import.duplicates" name="import.duplicates"
+                       class="bg-white/50 dark:bg-gray-700 border border-gray-300/50 dark:border-gray-600/50 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 block w-full px-3 py-1.5 dark:placeholder-gray-400 backdrop-blur-sm">
+                 <option value="replace" {{if eq .Config.Import.Duplicates "replace"}}selected{{end}}>DUP. REPLACE - Overwrite existing files</option>
+                 <option value="skip" {{if eq .Config.Import.Duplicates "skip"}}selected{{end}}>DUP. SKIP - Keep both files</option>
+                 <option value="queue" {{if eq .Config.Import.Duplicates "queue"}}selected{{end}}>DUP. QUEUE - Add to review queue</option>
+               </select>
+           </div>
          </div>
        </div>
 

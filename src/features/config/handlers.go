@@ -51,6 +51,7 @@ func (h *Handler) UpdateSettings(c *fiber.Ctx) error {
 			Move:                 c.FormValue("import.move") == "true",
 			AlwaysQueue:          c.FormValue("import.always_queue") == "true",
 			Duplicates:           c.FormValue("import.duplicates"),
+			AllowCrossReleaseDuplicates: c.FormValue("import.allow_cross_release_duplicates") == "true",
 			AllowMissingMetadata: c.FormValue("import.allow_missing_metadata") == "true",
 			PathOptions: Paths{
 				DefaultPath:     c.FormValue("import.paths.default_path"),

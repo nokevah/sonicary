@@ -36,6 +36,7 @@ var defaultConfig = Config{
 		Move:             false,
 		AlwaysQueue:      false,
 		Duplicates:       "queue",
+		AllowCrossReleaseDuplicates:  false,
 		AutoStartWatcher: false,
 		PathOptions: Paths{
 			Compilations:    "%asciify{$genre}/%asciify{$format}/%asciify{$albumartist}/%asciify{$album} (%if{$original_year,$original_year,$year})/%asciify{$track $title}",

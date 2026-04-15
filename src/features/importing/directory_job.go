@@ -99,6 +99,43 @@ func countSupportedFiles(pathToImport string) int {
 	return totalFiles
 }
 
+func normalizeCompareValue(s string) string {
+	return strings.ToLower(strings.TrimSpace(s))
+}
+
+func mainAlbumArtistName(track *music.Track) string {
+	if track == nil || track.Album == nil {
+		return ""
+	}
+	if len(track.Album.Artists) > 0 && track.Album.Artists[0].Artist != nil {
+		return track.Album.Artists[0].Artist.Name
+	}
+	if len(track.Artists) > 0 && track.Artists[0].Artist != nil {
+		return track.Artists[0].Artist.Name
+	}
+	return ""
+}
+
+func sameReleaseContext(a, b *music.Track) bool {
+	if a == nil || b == nil || a.Album == nil || b.Album == nil {
+		return false
+	}
+
+	if normalizeCompareValue(a.Album.Title) != normalizeCompareValue(b.Album.Title) {
+		return false
+	}
+
+	if normalizeCompareValue(mainAlbumArtistName(a)) != normalizeCompareValue(mainAlbumArtistName(b)) {
+		return false
+	}
+
+	if a.Metadata.Year != 0 && b.Metadata.Year != 0 && a.Metadata.Year != b.Metadata.Year {
+		return false
+	}
+
+	return true
+}
+
 // determineAction determines what action to take for a track based on config and duplicate tracks
 func determineAction(track *music.Track, duplicateTrack *music.Track, config config.Import, logger *slog.Logger) (ImportAction, music.QueueItemType, map[string]string) {
 	if err := track.ValidateRequiredMetadata(); err != nil {
@@ -114,6 +151,15 @@ func determineAction(track *music.Track, duplicateTrack *music.Track, config con
 		}
 	}
 	if duplicateTrack != nil {
+		if config.AllowCrossReleaseDuplicates && !sameReleaseContext(track, duplicateTrack) {
+			logger.Info("Service.runDirectoryImport: duplicate fingerprint found on different release, importing anyway",
+				"title", track.Title,
+				"incoming_album", track.Album.Title,
+				"existing_album", duplicateTrack.Album.Title,
+				"incoming_artist", mainAlbumArtistName(track),
+				"existing_artist", mainAlbumArtistName(duplicateTrack))
+			return ImportTrack, "", nil
+		}
 		switch config.Duplicates {
 		case "skip":
 			logger.Info("Service.runDirectoryImport: Decided to skip duplicate track", "reason", "skip enabled for duplicates", "duplicate", "true", "duplicate_path", duplicateTrack.Path, "title", track.Title)
